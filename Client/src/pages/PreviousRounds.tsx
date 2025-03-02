@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ScoreCard from "./ScoreCard";
 
 const PreviousRounds: React.FC = () => {
     const [scores, setScores] = useState<{ course: string, score: number, comments: string }[]>([]);
