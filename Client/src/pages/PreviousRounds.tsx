@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+
+// Styling
+import '../styles/PreviousRounds.css';
+
 // PreviousRounds component
 const PreviousRounds: React.FC = () => {
     const [scores, setScores] = useState<{ course: string, score: number, comments: string }[]>([]);
@@ -23,7 +27,7 @@ const PreviousRounds: React.FC = () => {
     };
 
     return (
-        <div>
+        <div className='container'>
             <h1>Previous Rounds</h1>
             <table>
                 <thead>
@@ -31,7 +35,6 @@ const PreviousRounds: React.FC = () => {
                         <th>Course</th>
                         <th>Total Score</th>
                         <th>Comments</th>
-                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,8 +48,9 @@ const PreviousRounds: React.FC = () => {
                                     onChange={(e) => updateComments(index, e.target.value)} 
                                 />
                             </td>
+                            <br />
                             <td>
-                                <button onClick={() => deleteScore(index)}>Delete Score</button>
+                                <button id="deleteButton" onClick={() => deleteScore(index)}>Delete Score</button>
                             </td>
                         </tr>
                     ))}
