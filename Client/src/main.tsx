@@ -9,12 +9,14 @@ import PreviousRounds from './pages/PreviousRounds.tsx'
 
 // Golf Animation
 import GolferAnimation from './pages/GolferAnimation.tsx'
+import Trivia from './pages/Trivia.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
+    <Trivia />
+    <GolferAnimation />
     <ScoreCard />
     <PreviousRounds />
-    <GolferAnimation />
   </StrictMode>,
 )

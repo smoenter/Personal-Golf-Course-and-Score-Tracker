@@ -11,6 +11,12 @@ function App() {
   return (
     <>
       <h1>Welcome to Golf Geek!</h1>
+      <header>
+        <div id="mainIMG"> </div>
+        <div>
+          <p className='break-point'>The one stop application for all golf fanatics.</p>
+          </div>
+      </header>
       <main className="LogoPage">
         <div>
           <h2>Check in on the Pros!</h2>
@@ -39,9 +45,6 @@ function App() {
       </main>
       <div className="card">
       </div>
-      <p className="read-the-docs">
-        Click on the logos to learn more
-      </p>
     </>
   )
 }
