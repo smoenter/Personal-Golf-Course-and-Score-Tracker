@@ -7,10 +7,14 @@ import App from './App.tsx'
 import ScoreCard from './pages/ScoreCard.tsx'
 import PreviousRounds from './pages/PreviousRounds.tsx'
 
+// Golf Animation
+import GolferAnimation from './pages/GolferAnimation.tsx'
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
     <ScoreCard />
     <PreviousRounds />
+    <GolferAnimation />
   </StrictMode>,
 )
