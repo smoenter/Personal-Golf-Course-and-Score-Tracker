@@ -1,0 +1,80 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+  }
+  
+  .rounds {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .round {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #FFD700;
+    border-radius: 8px;
+    width: 80%;
+  }
+  
+  .round h3 {
+    margin-right: 10px;
+  }
+
+  th {
+    color: #f5f5dc;
+    font-size: 1.2em;
+    padding: 10px;
+  }
+  
+#deleteButton {
+    background: linear-gradient(135deg, #FFD700, #FFC107);
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    margin-left: 20px;
+    margin-bottom: 18px;
+  }
+  
+  #deleteButton:hover {
+    background: linear-gradient(135deg, #FFEC8B, #FFD700);
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.8);
+  }
+  
+  #deleteButton:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(255, 215, 0, 0.6);
+  }
+
+  textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: box-shadow 0.3s ease-in-out;
+    background-color: rgb(70, 67, 67);
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px 2px gold;
+}
+
+#PR {
+  font-family: Marck Script;
+  font-size: 55px;
+}
