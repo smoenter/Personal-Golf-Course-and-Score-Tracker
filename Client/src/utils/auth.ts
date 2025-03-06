@@ -1,6 +1,12 @@
 import { JwtPayload, jwtDecode } from 'jwt-decode';
 
 class AuthService {
+
+  // Check if the user is signed up 
+  signUp (idToken: string) {
+    localStorage.setItem('id_token', idToken);
+    window.location.assign('/');
+  }
   
   // Check if the user is logged in by retrieving the token from localStorage
   loggedIn() {

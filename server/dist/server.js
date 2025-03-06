@@ -12,6 +12,10 @@ app.use(express.json());
 app.use(routes);
 sequelize.sync({ force: forceDatabaseRefresh }).then(() => {
     app.listen(PORT, () => {
+<<<<<<< HEAD
+        console.log(`Server is listening on port ${PORT}`);
+=======
         console.log(`Server is listening on port http://localhost:${PORT}`);
+>>>>>>> eda4113443220eab823d30fc393c411ddc79750b
     });
 });
