@@ -54,7 +54,7 @@ function ScoreCard() {
 
     return (
         <div>
-            <h1>Scorecard</h1>
+            <h1 id='SC'>Scorecard</h1>
             <form className='form' onSubmit={handleSubmit}>
                 <label>Course Name</label>
                 <input

@@ -28,7 +28,7 @@ const PreviousRounds: React.FC = () => {
 
     return (
         <div className='container'>
-            <h1>Previous Rounds</h1>
+            <h1 id='PR'>Previous Rounds</h1>
             <table>
                 <thead>
                     <tr>

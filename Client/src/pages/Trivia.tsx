@@ -69,6 +69,7 @@ const Trivia: React.FC = () => {
           Submit Answer
         </button>
       </div>
+      <footer> FOOOORREEEEEEE!!!!!!</footer>
     </div>
   );
 };

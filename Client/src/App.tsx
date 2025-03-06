@@ -10,12 +10,18 @@ function App() {
 
   return (
     <>
-      <h1>Welcome to Golf Geek!</h1>
+      <h1 className='WTGG'>Welcome to Golf Geek!</h1>
       <header>
-        <div id="mainIMG"> </div>
-        <div>
-          <p className='break-point'>The one stop application for all golf fanatics.</p>
-          </div>
+        <div className="text-content">
+          <p className='break-point'>
+            <span className='marck-script'>Golf Geek</span> <br></br> A unique application for golf fanatics. 
+            Enjoy easy access to up-to-date news on the PGA Tour, 
+            check the Weather and even log your rounds! See all previous rounds played and note your favorite things 
+            about the course. <br /> <br />
+            (Or how many mulligans you used!)
+          </p>
+        </div>
+        <div id="mainIMG"></div>
       </header>
       <main className="LogoPage">
         <div>
@@ -45,6 +51,9 @@ function App() {
       </main>
       <div className="card">
       </div>
+      <p className="read-the-docs">
+        Click on the logos to learn more
+      </p>
     </>
   )
 }
