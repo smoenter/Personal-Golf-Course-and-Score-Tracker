@@ -2,9 +2,10 @@ import { Architect } from "../models/architect";
 import { City } from "../models/city";
 import { GolfCourse } from "../models/golfcourse";
 
+
 async function insertCitiesAndGolfCourses() {
     try {
-        // add architect model
+        // add architect model and insert data here
         const architects = await Architect.bulkCreate([
            { name: 'Jack Kidwell'},
            { name: 'Herbert Strong'},
