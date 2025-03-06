@@ -41,4 +41,73 @@
   color: #888;
 }
 
+/* Logos on main page */
 
+.LogoPage {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.LogoPage div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  align-items: flex-start; /* Align items at the start of the cross axis */
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header #mainIMG {
+  background-image: url('../public/golfball.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 70vh;
+  width: 50%;
+  margin-bottom: 0px;
+}
+
+header .text-content {
+  width: 50%;
+  padding: 20px;
+  text-align: left;
+}
+
+.break-point {
+  /* background-color: #61dafbaa; */
+  height: 100px;
+  font-family: "cursive";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 35px;
+  margin-top: 0px;
+}
+
+.WTGG {
+  font-family: "Marck Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 65px;
+  margin-top: 0px;
+  line-height: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.marck-script {
+  font-family: "Marck Script", cursive;
+  font-size: 45px;
+}
+
+h2 {
+  font-family: "curisve";
+}
