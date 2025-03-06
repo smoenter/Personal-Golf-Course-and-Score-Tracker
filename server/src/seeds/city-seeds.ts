@@ -1,6 +1,11 @@
+import { Architect } from "../models/architect";
+import { City } from "../models/city";
+import { GolfCourse } from "../models/golfcourse";
+
+
 async function insertCitiesAndGolfCourses() {
     try {
-        // add architect model
+        // add architect model and insert data here
         const architects = await Architect.bulkCreate([
            { name: 'Jack Kidwell'},
            { name: 'Herbert Strong'},
@@ -20,6 +25,9 @@ async function insertCitiesAndGolfCourses() {
 
 // may or may not work
         const columbusId = cities.find(city => city.name === 'Columbus')?.id;
+        if (columbusId === undefined) {
+            throw new Error('Columbus city ID not found');
+        }
         await GolfCourse.bulkCreate([
             { cityId: columbusId, name: 'Airport Golf Course', address: '900 N. Hamilton Road, Columbus, OH 43219', architectId: architects[0].id },
             { cityId: columbusId, name: 'Champions Golf Course', address: '3900 Westerville Road, Columbus, OH 43224', architectId: architects[1].id },
@@ -27,6 +35,9 @@ async function insertCitiesAndGolfCourses() {
         ]);
 
         const clevelandId = cities.find(city => city.name === 'Cleveland')?.id;
+        if (clevelandId === undefined) {
+            throw new Error('Cleveland city ID not found');
+        }
         await GolfCourse.bulkCreate([
             { cityId: clevelandId, name: 'Ironwood Golf Course', address: 'Hinckley Reservation 445 State Rd.Hinckley, Ohio 44233', architectId: architects[2].id },
             { cityId: clevelandId, name: 'Manakiki Golf Course', address: 'North Chagrin Reservation 35501 Eddy Road Willoughby, OH 44094', architectId: architects[3].id },
@@ -34,6 +45,9 @@ async function insertCitiesAndGolfCourses() {
         ]);
 
         const cincinnatiId = cities.find(city => city.name === 'Cincinnati')?.id;
+        if (cincinnatiId === undefined) {
+            throw new Error('Cincinnati city ID not found');
+        }
         await GolfCourse.bulkCreate([
             { cityId: cincinnatiId, name: 'Miami Whitewater Forest Golf Course', address: '8801 Mt. Hope Road Harrison, OH 45030 and Hamilton County Park District', architectId: architects[5].id },
             { cityId: cincinnatiId, name: 'Meadow Links and Golf Academy', address: '10999 Mill Road, Cincinnati, OH 45240', architectId: architects[6].id },
