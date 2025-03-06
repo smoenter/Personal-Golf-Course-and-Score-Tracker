@@ -1,4 +1,4 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import sunLogo from './assets/367527_pointy_sun_icon.svg' // Sun Logo
 import pgaLogo from '/PGA TOUR_idATncDXGY_1.svg' // PGA Logo
 import noteBook from '/notebook.png' // Notebook Logo
@@ -12,6 +12,7 @@ function App() {
 
   return (
     <>
+      <>
       <h1 className='WTGG'>Welcome to Golf Geek!</h1>
       <header>
         <div className="text-content">
@@ -63,6 +64,7 @@ function App() {
         <Outlet />
       </main>
     </div>
+  </>
   )
 }
 

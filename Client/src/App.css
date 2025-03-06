@@ -59,7 +59,7 @@
 
 header {
   display: flex;
-  align-items: flex-start; /* Align items at the start of the cross axis */
+  align-items: flex-start;
   justify-content: space-between;
   padding: 20px;
 }
