@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 IF DATABASE EXISTS golftracker
 DROP DATABASE golftracker;
 
@@ -15,3 +16,6 @@ CREATE TABLE scoreCard (
   score INT NOT NULL,
   user_id INT REFERENCES users(id)
 );
+=======
+CREATE database golftracker;
+>>>>>>> 68929b51d4b31585e6bdac62ee2fc2aa64e091c3

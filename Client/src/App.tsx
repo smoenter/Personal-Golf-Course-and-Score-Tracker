@@ -4,9 +4,11 @@ import pgaLogo from '/PGA TOUR_idATncDXGY_1.svg' // PGA Logo
 import noteBook from '/notebook.png' // Notebook Logo
 import golfBall from './assets/golf-icon.png'
 import './App.css'
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -55,7 +57,14 @@ function App() {
         Click on the logos to learn more
       </p>
     </>
+    <div>
+      <Navbar />
+      <main className='container'>
+        <Outlet />
+      </main>
+    </div>
   )
 }
 
 export default App
+
