@@ -11,7 +11,18 @@ class AuthService {
   // Check if the user is logged in by retrieving the token from localStorage
   loggedIn() {
     const token = this.getToken();
-    return token;
+    return !!token && !this.isTokenExpired(token);
+  }
+  
+  isTokenExpired(token: string) {
+    try {
+      const decoded = jwtDecode<JwtPayload>(token);
+      if(decoded?.exp && decoded?.exp < Date.now() / 1000 )  {
+        return true;
+      }
+    } catch (err) {
+      return false;
+    }
   }
 
   // Retrieve the JWT token from localStorage
