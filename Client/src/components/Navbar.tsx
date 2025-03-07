@@ -35,17 +35,14 @@ const checkSignUp = () => {
 
   return (
     <div className="display-flex justify-space-between align-center py-2 px-5 mint-green">
-      <h1>
-       Scorecard Tracker
-      </h1>
       <div>
         {
           //
           // Conditional rendering based on signUpCheck state
           !signUpCheck ? (
             // Render signUp button if user is not sign up
-            <button className="btn" type='button'>
-              <Link to='/signUp'>Sign Up</Link>
+            <button id="btn" type='button'>
+              <Link to='/signUp' style={{color:'white'}}>Sign Up</Link>
             </button>
           ) : 
           !loginCheck ? (
