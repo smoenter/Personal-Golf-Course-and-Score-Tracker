@@ -2,16 +2,26 @@
 import sunLogo from './assets/367527_pointy_sun_icon.svg' // Sun Logo
 import pgaLogo from '/PGA TOUR_idATncDXGY_1.svg' // PGA Logo
 import noteBook from '/notebook.png' // Notebook Logo
-import golfBall from './assets/golf-icon.png'
+import golfBall from './assets/golf-icon.png' // Log Your Round
 import './App.css'
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Trivia from './pages/Trivia'
+import GolferAnimation from './pages/GolferAnimation'
+
+// import ScoreCard from './pages/ScoreCard'
 
 
 function App() {
 
   return (
     <>
+    <div id='NavBar'>
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+    </div>
       <>
       <h1 className='WTGG'>Welcome to Golf Geek!</h1>
       <header>
@@ -41,15 +51,15 @@ function App() {
         </div>
         <div>
           <h2>Log Your Round</h2>
-          <a href="https://www.pgatour.com/" target="_blank">
-            <img src={golfBall} className="logo" alt="Golf Ball logo" />
-          </a>
+          <Link to="/scorecard">
+              <img src={golfBall} className="logo" alt="Golf Ball logo" />
+            </Link>
         </div>
         <div>
           <h2>Previous Rounds</h2>
-          <a href="https://www.pgatour.com/" target="_blank">
-            <img src={noteBook} className="logo" alt="Notebook logo" />
-          </a>
+          <Link to="/previousrounds">
+              <img src={noteBook} className="logo" alt="Golf Ball logo" />
+            </Link>
         </div>
       </main>
       <div className="card">
@@ -57,13 +67,11 @@ function App() {
       <p className="read-the-docs">
         Click on the logos to learn more
       </p>
+      <div>
+        <Trivia />
+        <GolferAnimation />
+      </div>
     </>
-    <div>
-      <Navbar />
-      <main className='container'>
-        <Outlet />
-      </main>
-    </div>
   </>
   )
 }

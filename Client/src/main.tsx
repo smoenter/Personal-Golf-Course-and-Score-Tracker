@@ -6,24 +6,26 @@ import App from './App.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import Login from './pages/Login.tsx';
 
+import ScoreCard from './pages/ScoreCard.tsx';
+import PreviousRounds from './pages/PreviousRounds.tsx';
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
     errorElement: <ErrorPage />,
     children: [
       {
         index: true,
-        element: <Login />
+        element: <App />
       },
       {
-        path: '/signUp',
-        element: <SignUP />
+        path: '/scorecard',
+        element: <ScoreCard />
       },
       {
-        path: '/login',
-        element: <Login />
-      }
+        path: '/previousrounds',
+        element: <PreviousRounds />
+      },
     ]
   }
 ])
