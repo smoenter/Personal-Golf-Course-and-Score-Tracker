@@ -1,7 +1,7 @@
 import express from 'express';
-import { Architect } from '../models/architect.ts';
-import { City } from '../models/city.ts';
-import { GolfCourse } from '../models/golfcourse.ts';
+import { Architect } from '../../models/architect';
+import { City } from '../../models/city';
+import { GolfCourse } from '../../models/golfcourse';
 
 
 
