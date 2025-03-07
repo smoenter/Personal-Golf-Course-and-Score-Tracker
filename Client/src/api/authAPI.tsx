@@ -25,8 +25,10 @@ const login = async (userInfo: UserLogin) => {
   }
 }
 
-const signUp = async (userInfo: UserLogin) => {
-  // make a POST request to the login route
+// Function to handle sign-up
+
+const signUp = async ({email: string, password: string}) => {
+  // make a POST request to the sign-up route
   try {
     // Send a POST request to '/auth/login' with user login information in JSON format
     const response = await fetch('/auth/signUp', {
@@ -34,19 +36,22 @@ const signUp = async (userInfo: UserLogin) => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(userInfo)
+      body: JSON.stringify({ email, password })
     });
+
     // Parse the response body as JSON
     const data = await response.json();
+
     // Throw error if response status is not OK (200-299)
     if (!response.ok) {
-      const errorData = await response.json(); // Parse error response as JSON
-      throw new Error(`Error: ${errorData.message}`); // Throw a detailed error message
+      const errorData = data || {}; 
+      throw new Error(`Error: ${errorData.message || 'Unknown error occurred'}`); // Throw a detailed error message
     }
+
     return data;  // Return the data received from the server
   } catch (err) {
-    console.log('Error from user signUp: ', err);  // Log any errors that occur during fetch
-    return Promise.reject('Could not fetch user info');  // Return a rejected promise with an error message
+    console.error('Error signing up: ', err);  // Log any errors that occur during fetch
+    return Promise.reject(err);  // Return a rejected promise with an error message
   }
 }
 export { login, signUp };

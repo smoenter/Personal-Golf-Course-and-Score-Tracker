@@ -4,18 +4,18 @@ import auth from '../utils/auth';
 
 const Navbar = () => {
 // State to track the Sign up status
-const [signUpCheck, setsignUpCheck] = useState(false);
+// const [signUpCheck, setsignUpCheck] = useState(false);
 
-//Function to check if user signs up
-const checkSignUp = () => {
-  if(auth.signUp()) {
-    setsignUpCheck(true);
-  }
-};
-  // useEffect hook to run checksignUp() on component mount and when singUpCheck state changes
-  useEffect(() => {
-    checkSignUp();  // Call SignUp() function to update checksSignUp state
-  }, [signUpCheck]);  // Dependency array ensures useEffect runs when singUpCheck changes
+// //Function to check if user signs up
+// const checkSignUp = () => {
+//   if(auth.signUp()) {
+//     setsignUpCheck(true);
+//   }
+// };
+//   // useEffect hook to run checksignUp() on component mount and when singUpCheck state changes
+//   useEffect(() => {
+//     checkSignUp();  // Call SignUp() function to update checksSignUp state
+//   }, [signUpCheck]);  // Dependency array ensures useEffect runs when singUpCheck changes
 
 
   // State to track the login status
@@ -34,7 +34,7 @@ const checkSignUp = () => {
   }, [loginCheck]);  // Dependency array ensures useEffect runs when loginCheck changes
 
   return (
-    <div className="display-flex justify-space-between align-center py-2 px-5 mint-green">
+    <div>
       <h1>
        Scorecard Tracker
       </h1>
@@ -42,12 +42,12 @@ const checkSignUp = () => {
         {
           //
           // Conditional rendering based on signUpCheck state
-          !signUpCheck ? (
-            // Render signUp button if user is not sign up
-            <button className="btn" type='button'>
-              <Link to='/signUp'>Sign Up</Link>
-            </button>
-          ) : 
+          // !signUpCheck ? (
+          //   // Render signUp button if user is not sign up
+          //   <button className="btn" type='button'>
+          //     <Link to='/signUp'>Sign Up</Link>
+          //   </button>
+          // ) 
           !loginCheck ? (
             // Render login button if user is not logged in
             <button className="btn" type='button'>
