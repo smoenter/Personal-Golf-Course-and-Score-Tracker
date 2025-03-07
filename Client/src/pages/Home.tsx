@@ -50,8 +50,7 @@ export default function Home() {
             <img src={noteBook} className="logo" alt="Golf Ball logo" />
           </Link>
       </div>
-    </main>}
-    <div className="card">
+      <div className="card">
     </div>
     <p className="read-the-docs">
       Click on the logos to learn more
@@ -60,6 +59,8 @@ export default function Home() {
       <Trivia />
       <GolferAnimation />
     </div>
+    </main>}
+   
   </>
   )
 }
