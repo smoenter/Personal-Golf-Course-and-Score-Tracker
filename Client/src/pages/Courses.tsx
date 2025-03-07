@@ -22,20 +22,21 @@ const GolfCoursesPage: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/cities");
+        const response = await fetch("/api/cities"); // Update this to your actual API endpoint
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data: City[] = await response.json();
         setCities(data);
       } catch (error) {
-        setError("Error fetching data: ");
+        setError("Error fetching data: " + (error instanceof Error ? error.message : "Unknown error"));
       } finally {
         setLoading(false);
       }
     };
     fetchData();
   }, []);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -54,7 +55,20 @@ const GolfCoursesPage: React.FC = () => {
           </li>
         ))}
       </ul>
-      {selectedCity && <div>Selected City: {selectedCity.name}</div>}
+      {selectedCity && (
+        <div>
+          <h2>Golf Courses in {selectedCity.name}</h2>
+          <ul>
+            {selectedCity.courses.map((course) => (
+              <li key={course.id}>
+                <h3>{course.name}</h3>
+                <p>Address: {course.address}</p>
+                <p>Architect: {course.architect}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

@@ -8,6 +8,7 @@ import { Outlet, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Trivia from './pages/Trivia'
 import GolferAnimation from './pages/GolferAnimation'
+import GolfCoursesPage from './pages/Courses'
 
 // import ScoreCard from './pages/ScoreCard'
 
@@ -70,6 +71,7 @@ function App() {
       <div>
         <Trivia />
         <GolferAnimation />
+        <GolfCoursesPage />
       </div>
     </>
   </>
