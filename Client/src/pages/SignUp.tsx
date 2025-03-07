@@ -27,13 +27,13 @@ const SignUp = () => {
             Auth.signUp(data.token);
         } catch (err) {
             console.error('Failed to signUp', err);
-            setError('Invalid username or password');
+            setError('Invalid username, email or password');
         }
     };
     return (
         <div className='container'>
             <form className='form' onSubmit={handleSubmit}>
-                <h1>SignUp</h1>
+                <h1>Sign Up</h1>
                 {error && <p className="error-message">{error}</p>}
                 <label >Username</label>
                 <input
@@ -41,6 +41,7 @@ const SignUp = () => {
                     name='username'
                     value={signUpData.username || ''}
                     onChange={handleChange}
+                    required
                 />
                  <label >Email</label>
                 <input
@@ -48,6 +49,7 @@ const SignUp = () => {
                     name='email'
                     value={signUpData.email || ''}
                     onChange={handleChange}
+                    required
                 />
                 <label>Password</label>
                 <input
@@ -55,6 +57,7 @@ const SignUp = () => {
                     name='password'
                     value={signUpData.password || ''}
                     onChange={handleChange}
+                    required
                 />
                 <button type='submit'>Submit Form</button>
             </form>
