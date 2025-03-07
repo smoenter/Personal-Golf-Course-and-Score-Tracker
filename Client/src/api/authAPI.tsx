@@ -27,7 +27,7 @@ const login = async (userInfo: UserLogin) => {
 
 // Function to handle sign-up
 
-const signUp = async ({email: string, password: string}) => {
+const signUp = async ({ email, password }: { email: string, password: string }) => {
   // make a POST request to the sign-up route
   try {
     // Send a POST request to '/auth/login' with user login information in JSON format

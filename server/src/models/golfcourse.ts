@@ -2,7 +2,7 @@ import { DataTypes, Sequelize, Model, Optional } from 'sequelize';
 
 interface goldcourseAttributes {
     id: number;
-    cityId: number;
+    cityId: number | any;
     name: string;
     address: string;
     architectId: number;
