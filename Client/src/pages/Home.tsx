@@ -25,42 +25,40 @@ export default function Home() {
       </div>
       <div id="mainIMG"></div>
     </header>
-{ loginCheck &&  <main className="LogoPage">
-      <div>
-        <h2>Check in on the Pros!</h2>
-        <a href="https://www.pgatour.com/" target="_blank">
-          <img src={pgaLogo} className="logo" alt="PGA logo" />
-        </a>
-      </div>
-      <div>
-        <h2>How's the Weather?</h2>
-        <a href="https://challenge-9-weather-app.onrender.com" target="_blank">
-          <img src={sunLogo} className="logo react" alt="Sun logo" />
-        </a>
-      </div>
-      <div>
-        <h2>Log Your Round</h2>
-        <Link to="/scorecard">
+{ loginCheck &&  <><main className="LogoPage">
+        <div>
+          <h2>Check in on the Pros!</h2>
+          <a href="https://www.pgatour.com/" target="_blank">
+            <img src={pgaLogo} className="logo" alt="PGA logo" />
+          </a>
+        </div>
+        <div>
+          <h2>How's the Weather?</h2>
+          <a href="https://challenge-9-weather-app.onrender.com" target="_blank">
+            <img src={sunLogo} className="logo react" alt="Sun logo" />
+          </a>
+        </div>
+        <div>
+          <h2>Log Your Round</h2>
+          <Link to="/scorecard">
             <img src={golfBall} className="logo" alt="Golf Ball logo" />
           </Link>
-      </div>
-      <div>
-        <h2>Previous Rounds</h2>
-        <Link to="/previousrounds">
+        </div>
+        <div>
+          <h2>Previous Rounds</h2>
+          <Link to="/previousrounds">
             <img src={noteBook} className="logo" alt="Golf Ball logo" />
           </Link>
-      </div>
-      <div className="card">
-    </div>
-    <p className="read-the-docs">
-      Click on the logos to learn more
-    </p>
-    <div>
-      <Trivia />
-      <GolferAnimation />
-    </div>
-    </main>}
-   
+        </div>
+        <div className="card">
+        </div>
+      </main><>
+          <div id='trivia'>
+            <Trivia />
+            <GolferAnimation />
+          </div>
+        </></>
+    }
   </>
   )
 }
