@@ -1,7 +1,7 @@
 import express from 'express';
-import { Architect } from '../../models/architect';
-import { City } from '../../models/city';
-import { GolfCourse } from '../../models/golfcourse';
+import { Architect } from '../../models/architect.js';
+import { City } from '../../models/city.js';
+import { GolfCourse } from '../../models/golfcourse.js';
 
 
 
@@ -18,11 +18,12 @@ router.get('/architects', async (_req, res) => {
 });
 
 // Get all cities
-router.get('/city', async (_req, res) => {
+router.get('/', async (_req, res) => {
     try {
         const cities = await City.findAll();
         res.json(cities);
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: 'Error fetching cities' });
     }
 });
