@@ -1,5 +1,6 @@
 import { seedUsers } from './user-seeds.js';
 import sequelize from '../config/connection.js';
+import { insertCitiesAndGolfCourses } from './city-seeds.js';
 
 const seedAll = async (): Promise<void> => {
   try {
@@ -8,6 +9,9 @@ const seedAll = async (): Promise<void> => {
     
     await seedUsers();
     console.log('\n----- USERS SEEDED -----\n');
+
+    await insertCitiesAndGolfCourses();
+    console.log('\n----- CITIES SEEDED -----\n');
     
     process.exit(0);
   } catch (error) {

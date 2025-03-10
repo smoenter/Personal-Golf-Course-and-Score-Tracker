@@ -7,6 +7,7 @@ import Trivia from './Trivia'
 import GolferAnimation from './GolferAnimation'
 import { useState } from 'react';
 import auth from '../utils/auth';
+import GolfCoursesPage from './Courses';
 
 export default function Home() {
     const [loginCheck] = useState(()=>auth.loggedIn());
@@ -57,6 +58,8 @@ export default function Home() {
             <Trivia />
             <GolferAnimation />
           </div>
+
+          <GolfCoursesPage  />
         </></>
     } 
   </>

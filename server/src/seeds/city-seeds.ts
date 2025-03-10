@@ -1,9 +1,9 @@
-import { Architect } from "../models/architect";
-import { City } from "../models/city";
-import { GolfCourse } from "../models/golfcourse";
+import { Architect } from "../models/architect.js";
+import { City } from "../models/city.js";
+import { GolfCourse } from "../models/golfcourse.js";
 
 
-async function insertCitiesAndGolfCourses() {
+export async function insertCitiesAndGolfCourses() {
     try {
         // add architect model and insert data here
         const architects = await Architect.bulkCreate([
@@ -51,4 +51,4 @@ async function insertCitiesAndGolfCourses() {
     }
 }
 
-insertCitiesAndGolfCourses();
+// insertCitiesAndGolfCourses();
