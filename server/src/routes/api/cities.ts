@@ -1,9 +1,7 @@
-import express from 'express';
-import { Architect } from '../../models/architect';
-import { City } from '../../models/city';
-import { GolfCourse } from '../../models/golfcourse';
-
-
+import express from "express";
+import { City } from "../../models/city";
+import { GolfCourse } from "../../models/golfcourse";
+import { Architect } from "../../models/architect";
 
 const router = express.Router();
 
