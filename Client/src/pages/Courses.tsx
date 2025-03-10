@@ -16,11 +16,12 @@ interface City {
 const GolfCoursesPage: React.FC = () => {
   const [cities, setCities] = useState<City[]>([]);
   const [selectedCity, setSelectedCity] = useState<City | null>(null);
+  const [golfCourses, setGolfCourses] = useState<GolfCourse[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCities = async () => {
       try {
         const response = await fetch("/api/cities");
         if (!response.ok) {
@@ -29,13 +30,39 @@ const GolfCoursesPage: React.FC = () => {
         const data: City[] = await response.json();
         setCities(data);
       } catch (error) {
-        setError("Error fetching data: ");
+        setError("Error fetching data: " + (error instanceof Error ? error.message : "Unknown error"));
       } finally {
         setLoading(false);
       }
     };
-    fetchData();
+    fetchCities();
   }, []);
+
+  useEffect(() => {
+    if (selectedCity) {
+      const fetchGolfCourses = async () => {
+        setLoading(true);
+        try {
+          const response = await fetch(`/golfcourses/:cityId/${selectedCity.id}`);
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          const data: GolfCourse[] = await response.json();
+          setGolfCourses(data);
+        } catch (error) {
+          setError("Error fetching golf courses: " + (error instanceof Error ? error.message : "Unknown error"));
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchGolfCourses();
+    }
+  }, [selectedCity]);
+
+  const handleCityClick = (city: City) => {
+    setSelectedCity(city);
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -49,12 +76,29 @@ const GolfCoursesPage: React.FC = () => {
       <h1>Cities and Golf Courses</h1>
       <ul>
         {cities.map((city) => (
-          <li key={city.id} onClick={() => setSelectedCity(city)}>
+          <li key={city.id} onClick={() => handleCityClick(city)}>
             {city.name}
           </li>
         ))}
       </ul>
-      {selectedCity && <div>Selected City: {selectedCity.name}</div>}
+      {selectedCity && (
+        <div>
+          <h2>Golf Courses in {selectedCity.name}</h2>
+          <ul>
+            {golfCourses.length > 0 ? (
+              golfCourses.map((course) => (
+                <li key={course.id}>
+                  <h3>{course.name}</h3>
+                  <p>Address: {course.address}</p>
+                  <p>Architect: {course.architect}</p>
+                </li>
+              ))
+            ) : (
+              <li>No golf courses available</li>
+            )}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };

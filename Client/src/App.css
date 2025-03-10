@@ -129,7 +129,7 @@ h2 {
 
 /* Sign Up/Login Button */
 
-
+/* Login Button */
 #btn {
   padding: 10px 20px;
   border-radius: 50%;
@@ -139,7 +139,7 @@ h2 {
   width: 100px;
   color: white;
 }
-
+/* Sign Up Button */ 
 .btn {
   padding: 10px 20px;
   border-radius: 50%;
