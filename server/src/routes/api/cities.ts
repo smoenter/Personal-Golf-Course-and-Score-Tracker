@@ -43,3 +43,4 @@ router.get('/golfcourses/:cityId', async (req, res) => {
 });
 
 export default router;
+
