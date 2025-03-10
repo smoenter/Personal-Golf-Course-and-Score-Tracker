@@ -127,7 +127,8 @@ h2 {
   padding: 20px;
 }
 
-/* Sign Up Button */
+/* Sign Up/Login Button */
+
 
 #btn {
   padding: 10px 20px;
@@ -137,4 +138,20 @@ h2 {
   height: 100px;
   width: 100px;
   color: white;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 50%;
+  margin: 0 10px;
+  text-decoration: none;
+  height: 100px;
+  width: 100px;
+  color: white;
+  padding-bottom: 30px;
+}
+
+#btn .btn {
+ display: flex;
+ align-items: center;
 }
