@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "../styles/Courses.css";
 
 interface GolfCourse {
   id: number;
@@ -72,8 +73,8 @@ const GolfCoursesPage: React.FC = () => {
   }
 
   return (
-    <div>
-      <h1>Cities and Golf Courses</h1>
+    <div className="Courses">
+      <h1>Featured Courses!</h1>
       <ul>
         {cities.map((city) => (
           <li key={city.id} onClick={() => handleCityClick(city)}>
@@ -82,15 +83,14 @@ const GolfCoursesPage: React.FC = () => {
         ))}
       </ul>
       {selectedCity && (
-        <div>
+        <div className="PostClick">
           <h2>Golf Courses in {selectedCity.name}</h2>
           <ul>
             {golfCourses.length > 0 ? (
               golfCourses.map((course) => (
                 <li key={course.id}>
                   <h3>{course.name}</h3>
-                  <p>Address: {course.address}</p>
-                  <p>Architect: {course.architect}</p>
+                  <p>{course.address}</p>
                 </li>
               ))
             ) : (
