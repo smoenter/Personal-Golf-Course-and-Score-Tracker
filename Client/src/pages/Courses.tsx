@@ -43,7 +43,7 @@ const GolfCoursesPage: React.FC = () => {
       const fetchGolfCourses = async () => {
         setLoading(true);
         try {
-          const response = await fetch(`/golfcourses/${selectedCity.id}`);
+          const response = await fetch(`/api/cities/${selectedCity.id}/golfcourses`);
           if (!response.ok) {
             throw new Error("Network response was not ok");
           }
