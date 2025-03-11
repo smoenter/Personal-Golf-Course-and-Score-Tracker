@@ -1,7 +1,8 @@
-import express from "express";
-import { City } from "../../models/city";
-import { GolfCourse } from "../../models/golfcourse";
-import { Architect } from "../../models/architect";
+import express from 'express';
+import { Architect } from '../../models/architect.js';
+import { City } from '../../models/city.js';
+import { GolfCourse } from '../../models/golfcourse.js';
+
 
 const router = express.Router();
 
@@ -16,17 +17,18 @@ router.get('/architects', async (_req, res) => {
 });
 
 // Get all cities
-router.get('/city', async (_req, res) => {
+router.get('/', async (_req, res) => {
     try {
         const cities = await City.findAll();
         res.json(cities);
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: 'Error fetching cities' });
     }
 });
 
 // Get golf courses by city
-router.get('/golfcourses/:cityId', async (req, res) => {
+router.get('/:cityId/golfcourses', async (req, res) => {
     try {
         const { cityId } = req.params;
         const golfCourses = await GolfCourse.findAll({
@@ -35,8 +37,10 @@ router.get('/golfcourses/:cityId', async (req, res) => {
         });
         res.json(golfCourses);
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: 'Error fetching golf courses' });
     }
 });
 
 export default router;
+
