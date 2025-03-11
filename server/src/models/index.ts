@@ -11,4 +11,10 @@ const GolfCourse = GolfCourseFactory(sequelize);
 
 // ADD RELATIONSHIPS HERE
 
+Architect.hasMany(GolfCourse, { foreignKey: 'architectId' });
+  GolfCourse.belongsTo(Architect, { foreignKey: 'architectId' });
+
+  City.hasMany(GolfCourse, { foreignKey: 'cityId' });
+  GolfCourse.belongsTo(City, { foreignKey: 'cityId' });
+
 export { User, Architect, City, GolfCourse };
