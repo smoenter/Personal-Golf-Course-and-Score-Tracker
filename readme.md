@@ -13,6 +13,7 @@ The Personal Golf Course and Score Tracker is an application designed to help go
 - [Who Contributed](#who-contributed)
 - [Contact](#contact)
 - [Credits](#credits)
+- [Acknowlegments](#acknowledgements)
 
 ## Installation
 To install the application, follow these steps:
@@ -48,3 +49,9 @@ For any questions or feedback, please contact us at our github profiles linked b
 - [Stacey Moenter](https://github.com/smoenter)
 - [Dylan Panepucci](https://github.com/dpanepucci)
 - [Zacharia Owen](https://github.com/Rilsotea)
+
+## Acknowledgements
+- Diem Ly for GitHub merge issues
+- Aaron Brown for Sequelize issues
+- GitHub copilot, ChatGPT, Xpert learning for helping to debug our code
+- Tutors for guidance and problem solving 
