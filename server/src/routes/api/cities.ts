@@ -1,10 +1,7 @@
-landingpage
 import express from 'express';
 import { Architect } from '../../models/architect.js';
 import { City } from '../../models/city.js';
 import { GolfCourse } from '../../models/golfcourse.js';
-
-
 
 
 const router = express.Router();
