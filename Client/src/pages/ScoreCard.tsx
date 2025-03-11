@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/ScoreCard.css';
 
 // ScoreCard component
 function ScoreCard() {
+    const navigate = useNavigate();
+
     const [score, setScore] = useState(() => {
         const savedScores = localStorage.getItem('currentGolfScores');
         return savedScores ? JSON.parse(savedScores) : Array(18).fill('');
@@ -116,6 +119,7 @@ function ScoreCard() {
                 <br />
                 <button id='scButton' type='submit'>Submit Round</button>
             </form>
+            <button style={{marginLeft:'20px'}} id='backButton' onClick={() => navigate('/')}>Back to Home</button>
         </div>
     );
 }
