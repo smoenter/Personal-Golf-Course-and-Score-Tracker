@@ -31,7 +31,7 @@ router.get('/', async (_req, res) => {
 });
 
 // Get golf courses by city
-router.get('/golfcourses/:cityId', async (req, res) => {
+router.get('/:cityId/golfcourses', async (req, res) => {
     try {
         const { cityId } = req.params;
         const golfCourses = await GolfCourse.findAll({
@@ -40,6 +40,7 @@ router.get('/golfcourses/:cityId', async (req, res) => {
         });
         res.json(golfCourses);
     } catch (error) {
+        console.log(error);
         res.status(500).json({ error: 'Error fetching golf courses' });
     }
 });
