@@ -32,7 +32,8 @@ To install the application, follow these steps:
 ## Usage
 To start using the application, run the following command:
 npm start
-
+or just use the render link below
+https://personal-golf-course-and-score-tracker.onrender.com/
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
