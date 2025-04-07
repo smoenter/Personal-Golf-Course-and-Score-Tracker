@@ -39,7 +39,7 @@
     border: 1px solid black;
     border-radius: 5px;
     background-color: #12461281;
-    height: 200px;
+    height: 400px;
     width: 80px;
 }
 
@@ -116,4 +116,51 @@ input:focus {
 #SC {
     font-family: Marck Script;
     font-size: 75px;
+}
+
+
+/* Styling for Mobile Use */
+
+@media screen and (max-width: 450px){
+
+.form {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Makes it show one hole at a time */
+.holeRow {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Indivdual hole appearance  */
+
+.hole {
+    width: 84%;
+}
+.hole select {
+    width: 70%;
+    height: 100%;
+}
+.hole input {
+    width: 70%;
+    height: 100%;
+}
+
+/* How'd you play text area  */
+
+textarea {
+    width: 70%;
+}
+
+/* Course Name textarea  */
+
+input {
+    width: 70%;
+}
+
 }

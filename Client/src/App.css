@@ -43,7 +43,7 @@
   color: #888;
 }
 
-/* Logos on main page */
+/* Logos on main page/ Icons */
 
 .LogoPage {
   display: grid;
@@ -96,6 +96,7 @@ header .text-content {
   margin-top: 0px;
 }
 
+/* Welcome to Golf Geek */
 .WTGG {
   font-family: "Marck Script", cursive;
   font-weight: 400;
@@ -154,4 +155,27 @@ h2 {
 #btn .btn {
  display: flex;
  align-items: center;
+}
+
+
+/* Styling for iPhone/ mobile device */
+
+@media screen and (max-width: 450px) {
+  #mainIMG, .break-point {
+      display: none;  
+  }
+
+  .AppDiv {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .marck-script h2 {
+    display: none;
+  }
+
+  .LogoPage {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -104,3 +104,16 @@ button:focus-visible {
   }
  
 }
+
+/* Sizing for iPhone and mobile use */
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+      flex-direction: column; /* Mobile: stacked layout */
+  }
+
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+  }
+}
