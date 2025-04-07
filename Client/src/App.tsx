@@ -7,13 +7,14 @@ function App() {
 
   return (
     <>
+    <div className='AppDiv'>
     <div id='NavBar'>
       <Navbar />
     </div>
       <main>
         <Outlet />
       </main>
-     
+    </div>
   </>
   )
 }

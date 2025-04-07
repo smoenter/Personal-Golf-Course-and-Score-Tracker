@@ -56,7 +56,9 @@ export default function Home() {
       </main><>
           <div id='trivia'>
             <GolfCoursesPage  />
+            <br></br>
             <Trivia />
+            <br></br>
             <GolferAnimation />
           </div>
         </></>

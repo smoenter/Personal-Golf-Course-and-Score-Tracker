@@ -84,3 +84,10 @@
     clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
 }
 
+/* Styling for iPhone/ mobile device */
+
+@media screen and (max-width: 450px) {
+    .golf-scene {
+    display: none;
+    }
+}

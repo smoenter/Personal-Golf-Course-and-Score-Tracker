@@ -16,13 +16,16 @@ function ScoreCard() {
         return savedPars ? JSON.parse(savedPars) : Array(18).fill(3);
     });
 
+    const [gir, setGir] = useState(Array(18).fill(false)); // GIR state
+    const [fir, setFir] = useState(Array(18).fill(false)); // FIR state
+    const [putts, setPutts] = useState(Array(18).fill(0)); // New state for putts
     const [course, setCourse] = useState('');
     const [comments, setComments] = useState('');
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const totalScore = score.reduce((acc: any, curr: any) => acc + Number(curr), 0);
-        const newRound = { course, score: totalScore, comments };
+        const newRound = { course, score: totalScore, comments, gir, fir, putts }; // Include putts
         const savedRounds = JSON.parse(localStorage.getItem('golfScores') || '[]');
         savedRounds.push(newRound);
         localStorage.setItem('golfScores', JSON.stringify(savedRounds));
@@ -31,6 +34,9 @@ function ScoreCard() {
         // Reset the form
         setScore(Array(18).fill(''));
         setPar(Array(18).fill(3));
+        setGir(Array(18).fill(false));
+        setFir(Array(18).fill(false));
+        setPutts(Array(18).fill(0)); // Reset putts
         setCourse('');
         setComments('');
     };
@@ -45,6 +51,24 @@ function ScoreCard() {
         const newPar = [...par];
         newPar[index] = e.target.value;
         setPar(newPar);
+    };
+
+    const handleGirChange = (index: number) => {
+        const newGir = [...gir];
+        newGir[index] = !newGir[index];
+        setGir(newGir);
+    };
+
+    const handleFirChange = (index: number) => {
+        const newFir = [...fir];
+        newFir[index] = !newFir[index];
+        setFir(newFir);
+    };
+
+    const handlePuttsChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+        const newPutts = [...putts];
+        newPutts[index] = Number(e.target.value);
+        setPutts(newPutts);
     };
 
     useEffect(() => {
@@ -85,6 +109,26 @@ function ScoreCard() {
                                     value={s}
                                     onChange={(e) => handleScoreChange(e, index)}
                                 />
+                                <label>Putts</label>
+                                <input
+                                    type='number'
+                                    min='0'
+                                    max='10'
+                                    value={putts[index]}
+                                    onChange={(e) => handlePuttsChange(e, index)}
+                                />
+                                <label>GIR</label>
+                                <input
+                                    type='checkbox'
+                                    checked={gir[index]}
+                                    onChange={() => handleGirChange(index)}
+                                />
+                                <label>FIR</label>
+                                <input
+                                    type='checkbox'
+                                    checked={fir[index]}
+                                    onChange={() => handleFirChange(index)}
+                                />
                             </div>
                         ))}
                     </div>
@@ -105,6 +149,26 @@ function ScoreCard() {
                                     max='10'
                                     value={s}
                                     onChange={(e) => handleScoreChange(e, index + 9)}
+                                />
+                                <label>Putts</label>
+                                <input
+                                    type='number'
+                                    min='0'
+                                    max='10'
+                                    value={putts[index + 9]}
+                                    onChange={(e) => handlePuttsChange(e, index + 9)}
+                                />
+                                <label>GIR</label>
+                                <input
+                                    type='checkbox'
+                                    checked={gir[index + 9]}
+                                    onChange={() => handleGirChange(index + 9)}
+                                />
+                                <label>FIR</label>
+                                <input
+                                    type='checkbox'
+                                    checked={fir[index + 9]}
+                                    onChange={() => handleFirChange(index + 9)}
                                 />
                             </div>
                         ))}
